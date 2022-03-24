@@ -7,20 +7,17 @@ export const styles = {
     margin: "20px 0",
     maxWidth: "50%",
     minWidth: 300,
+
     "&:hover": {
       boxShadow: "1px 3px 5px 2px #00000033",
       transition: ".5s",
     },
   }),
   content: css({
-    height: "100%",
+    width: "100%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
-  }),
-  description: css({
-    display: "flex",
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
   }),
   alignCenter: css({
     display: "flex",
@@ -31,7 +28,6 @@ export const styles = {
       right: 3,
     },
   }),
-
 
   form: css({
     width: "100%",

@@ -35,7 +35,9 @@ export default function Review() {
         <Typography variant="h5" color="text.secondary">
           Write Reviews:
         </Typography>
-        <WriteReview/>
+        <div css={styles.write}>
+          <WriteReview />
+        </div>
         <Typography variant="h5" color="text.secondary">
           Reviews:
         </Typography>
@@ -63,6 +65,14 @@ const styles = {
     flexDirection: "column",
   }),
   movie: css({
+    width: "100%",
+    "> div": {
+      margin: "0 auto",
+      borderColor: primary,
+      width: "50%",
+    },
+  }),
+  write: css({
     width: "100%",
     "> div": {
       margin: "0 auto",
