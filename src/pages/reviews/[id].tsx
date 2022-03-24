@@ -10,6 +10,7 @@ import {
 } from "../../redux";
 import ReviewMessage from "components/ReviewMessage";
 import MovieCard from "components/MovieCard";
+import WriteReview from "components/WriteReview";
 import { Typography } from "@mui/material";
 import { primary } from "styles/colors";
 
@@ -32,8 +33,13 @@ export default function Review() {
           </div>
         )}
         <Typography variant="h5" color="text.secondary">
+          Write Reviews:
+        </Typography>
+        <WriteReview/>
+        <Typography variant="h5" color="text.secondary">
           Reviews:
         </Typography>
+
         {!!reviewState.reviews &&
           reviewState.reviews.movieById.movieReviewsByMovieId.nodes.map(
             (review) => (
