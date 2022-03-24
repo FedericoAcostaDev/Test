@@ -3,7 +3,11 @@ import { Observable } from "rxjs";
 import { filter, switchMap } from "rxjs/operators";
 import { RootState } from "../../store";
 import { EpicDependencies } from "../../types";
-import { GET_REVIEW_BY_MOVIE_ID, UPDATE_REVIEW_BY_ID } from "./queries";
+import {
+  GET_REVIEW_BY_MOVIE_ID,
+} from "./queries";
+import {UPDATE_REVIEW_BY_ID,
+  CREATE_REVIEW_MUTATION} from './mutations';
 import { actions, SliceAction } from "./slice";
 
 export const fetchMovieReview: Epic = (
@@ -53,3 +57,31 @@ export const updateMovieReview: Epic = (
   );
 
 }
+
+
+
+export const CreateMovieReview: Epic = (
+  action$: Observable<SliceAction["updateReview"]>,
+  state$: StateObservable<RootState>,
+  { client }: EpicDependencies
+) => {
+  return action$.pipe(
+    filter(actions.updateReview.match),
+    switchMap(async ({ payload }) => {
+      try {
+        const movieReviewPatch = {
+          body: payload.content.body || null,
+          title: payload.content.title || null,
+          rating: payload.content.rating || null,
+        };
+        const result = await client.mutate({
+          mutation: UPDATE_REVIEW_BY_ID,
+          variables: { id: payload.id, movieReviewPatch },
+        });
+        return await actions.fetch({ id: payload.movieID });
+      } catch (err) {
+        return actions.loadError();
+      }
+    })
+  );
+};
