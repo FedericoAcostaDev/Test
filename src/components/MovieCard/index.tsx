@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Typography, CardContent, Box } from "@mui/material";
+import { Card, Typography, CardContent } from "@mui/material";
 import { TMovie } from "@reduxjs/toolkit";
 import Link from "next/link";
 
@@ -20,19 +20,6 @@ const MovieCard = ({ movie }: MovieCardProps) => {
           <Typography gutterBottom variant="h5" component="div">
             {movie.title}
           </Typography>
-          <div>
-            <Box
-              component="img"
-              sx={{
-                height: 233,
-                width: 350,
-                maxHeight: { xs: 233, md: 167 },
-                maxWidth: { xs: 350, md: 250 },
-              }}
-              alt="The house from the offer."
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
-            />
-          </div>
           <div>
             <Typography variant="body1" color="text.secondary">
               Released: <strong>{movie.releaseDate}</strong>
