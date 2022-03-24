@@ -61,7 +61,7 @@ export const updateMovieReview: Epic = (
 
 
 export const CreateMovieReview: Epic = (
-  action$: Observable<SliceAction["updateReview"]>,
+  action$: Observable<SliceAction["createReview"]>,
   state$: StateObservable<RootState>,
   { client }: EpicDependencies
 ) => {
@@ -69,14 +69,17 @@ export const CreateMovieReview: Epic = (
     filter(actions.updateReview.match),
     switchMap(async ({ payload }) => {
       try {
-        const movieReviewPatch = {
-          body: payload.content.body || null,
-          title: payload.content.title || null,
-          rating: payload.content.rating || null,
+        const createMovieReviewPatch = {
+          id: null,
+          title: null,
+          body: null,
+          rating: null,
+          movieId: null,
+          userReviewerId: null,
         };
         const result = await client.mutate({
-          mutation: UPDATE_REVIEW_BY_ID,
-          variables: { id: payload.id, movieReviewPatch },
+          mutation: CREATE_REVIEW_MUTATION,
+          variables: { id: payload.id, createMovieReviewPatch },
         });
         return await actions.fetch({ id: payload.movieID });
       } catch (err) {

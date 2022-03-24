@@ -5,26 +5,43 @@ const initialState: ReviewState = {};
 
 export const slice = createSlice({
   initialState,
-  name: 'reviews',
+  name: "reviews",
   reducers: {
     fetch: (state, action: PayloadAction<{ id: string }>) => {
-      state.reviewsFetching = true
+      state.reviewsFetching = true;
     },
-    updateReview: (state, action: PayloadAction<{ id: string, movieID: string, content: Partial<TReview> }>) => {
-      state.reviewsFetching = true
+    updateReview: (
+      state,
+      action: PayloadAction<{
+        id: string;
+        movieID: string;
+        content: Partial<TReview>;
+      }>
+    ) => {
+      state.reviewsFetching = true;
+    },
+    createReview: (
+      state,
+      action: PayloadAction<{
+        id: string;
+        movieID: string;
+        content: Partial<TReview>;
+      }>
+    ) => {
+      state.reviewsFetching = true;
     },
     clearData: (state) => {
       state.reviews = undefined;
-      state.reviewsFetching = false
+      state.reviewsFetching = false;
     },
     loaded: (state, action: PayloadAction<{ data: QueryReview }>) => {
       state.reviews = action.payload.data;
-      state.reviewsFetching = false
+      state.reviewsFetching = false;
     },
     loadError: (state) => {
       state.reviews = undefined;
       state.reviewsError = true;
-      state.reviewsFetching = false
+      state.reviewsFetching = false;
     },
   },
 });
