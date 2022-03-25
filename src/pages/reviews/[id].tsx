@@ -53,7 +53,7 @@ export default function Review() {
           Write a Review
         </Typography>
         <div css={styles.write}>
-          <CreateReview />
+          <CreateReview/>
         </div>
       </section>
     </div>

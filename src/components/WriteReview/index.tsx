@@ -73,13 +73,6 @@ export default function CreateReview(props: ReviewProps) {
             ))}
           </div>
           <div css={styles.buttons}>
-            <Button
-              variant="contained"
-              color="secondary"
-              onClick={handleDeleteInput}
-            >
-              Cancel
-            </Button>
             <Button variant="contained" type="submit">
               Submit
             </Button>
