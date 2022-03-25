@@ -28,18 +28,20 @@ export default function Review() {
       <section css={styles.content}>
         {!!reviewState.reviews && (
           <div css={styles.movie}>
-            <Typography variant="h4">Movie:</Typography>
+            <Typography variant="h4" color="#ffffff">
+              Movie
+            </Typography>
             <MovieCard movie={reviewState.reviews.movieById as TMovie} />
           </div>
         )}
-        <Typography variant="h5" color="text.secondary">
-          Write a Review:
+        <Typography variant="h5" color="#ffffff">
+          Write a Review
         </Typography>
         <div css={styles.write}>
           <CreateReview />
         </div>
-        <Typography variant="h5" color="text.secondary">
-          Reviews:
+        <Typography variant="h5" color="#ffffff">
+          Reviews
         </Typography>
 
         {!!reviewState.reviews &&

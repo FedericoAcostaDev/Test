@@ -54,7 +54,9 @@ const Reviews: NextPage = () => {
   return (
     <div css={styles.root}>
       <section css={styles.contentSection}>
-        <Typography variant={"h4"}>{"Movies Reviewed"}</Typography>
+        <Typography variant={"h4"} color={"#ffffff"}>
+          {"Movies Reviewed"}
+        </Typography>
         {!movieState.movies ? (
           <CircularProgress />
         ) : (
