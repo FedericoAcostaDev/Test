@@ -38,6 +38,14 @@ export default function CreateReview(props: ReviewEditProps) {
           />
           <br />
           <TextField
+            label="User"
+            name="user"
+            placeholder="Write A Name"
+            sx={{ minWidth: "260px" }}
+            onChange={handleNewForm}
+          />
+          <br />
+          <TextField
             label="Review Body"
             css={styles.textArea}
             name="body"
