@@ -28,7 +28,7 @@ export default function ReviewMessage({ review, load }: ReviewMessageProps) {
     title: "",
     rating: 0,
   });
-  const [erroMessage, setErroMessage] = useState<string[]>([]);
+  const [errorMessage, setErrorMessage] = useState<string[]>([]);
   function handleEdit() {
     const { body, title, rating } = review;
     setFormContent({ body, title, rating });
@@ -59,11 +59,11 @@ export default function ReviewMessage({ review, load }: ReviewMessageProps) {
       );
       handleShowEdit();
     } else {
-      setErroMessage(hasMessageError);
+      setErrorMessage(hasMessageError);
     }
   }
   function handleErrorMessageClose() {
-    setErroMessage([]);
+    setErrorMessage([]);
   }
   if (!!load) {
     return <CircularProgress />;
@@ -84,7 +84,7 @@ export default function ReviewMessage({ review, load }: ReviewMessageProps) {
         )}
       </CardContent>
       <Snackbar
-        open={!!erroMessage.length}
+        open={!!errorMessage.length}
         autoHideDuration={5000}
         onClose={handleErrorMessageClose}
       >
@@ -93,7 +93,7 @@ export default function ReviewMessage({ review, load }: ReviewMessageProps) {
           severity="error"
           sx={{ width: "100%" }}
         >
-          {erroMessage.map((error) => (
+          {errorMessage.map((error) => (
             <li key={error}>Please fill the {error.toUpperCase()} field</li>
           ))}
         </Alert>
