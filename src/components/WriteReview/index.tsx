@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from 'react';
+import { useParams } from "react-router";
 import type { ChangeEvent, FormEvent } from "react";
 import { Button, Tooltip, TextField, Card, CardContent } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
@@ -9,19 +11,19 @@ type ReviewEditProps = {
     title: string;
     rating: number;
   };
-  handleShowEdit: () => void;
+  handleDeleteInput: () => void;
   handleSubmitReview: (e: FormEvent<HTMLFormElement>) => void;
-  handleFormEdit: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleFormEditRating: (rating: number) => void;
+  handleNewForm: (e: FormEvent<HTMLInputElement>) => void;
+  handleFormRating: (rating: number) => void;
 };
 
 export default function CreateReview(props: ReviewEditProps) {
   const {
     formContent,
-    handleShowEdit,
+    handleDeleteInput,
     handleSubmitReview,
-    handleFormEdit,
-    handleFormEditRating,
+    handleNewForm,
+    handleFormRating,
   } = props;
 
   return (
@@ -30,21 +32,19 @@ export default function CreateReview(props: ReviewEditProps) {
         <form onSubmit={handleSubmitReview} css={styles.form}>
           <TextField
             label="Review Title"
-            
             name="title"
             placeholder="Write A Title"
             sx={{ minWidth: "260px" }}
-            onChange={handleFormEdit}
+            onChange={handleNewForm}
           />
           <br />
           <TextField
             label="Review Body"
-            
             css={styles.textArea}
             name="body"
             placeholder="Write A Body"
             sx={{ minWidth: "260px" }}
-            //onChange={handleFormEdit}
+            onChange={handleNewForm}
             multiline
             rows={4}
           />
@@ -57,7 +57,7 @@ export default function CreateReview(props: ReviewEditProps) {
                 arrow
               >
                 <StarIcon
-                  onClick={() => handleFormEditRating(rating)}
+                  onClick={() => handleFormRating(rating)}
                   style={{
                     color: rating ? "#ffc107" : "#ccc7b8",
                   }}
@@ -69,7 +69,7 @@ export default function CreateReview(props: ReviewEditProps) {
             <Button
               variant="contained"
               color="secondary"
-              onClick={handleShowEdit}
+              onClick={handleDeleteInput}
             >
               Cancel
             </Button>
