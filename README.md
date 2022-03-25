@@ -1,9 +1,9 @@
 ## Challenge Cool Movies
 
 
--Listing of the movie reviews. 
--Editing the existing movie reviews.
--Adding additional reviews.
+- Listing of the movie reviews. 
+- Editing the existing movie reviews.
+- Adding additional reviews.
 
 
 
