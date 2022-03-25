@@ -34,12 +34,7 @@ export default function Review() {
             <MovieCard movie={reviewState.reviews.movieById as TMovie} />
           </div>
         )}
-        <Typography variant="h5" color="#ffffff">
-          Write a Review
-        </Typography>
-        <div css={styles.write}>
-          <CreateReview />
-        </div>
+
         <Typography variant="h5" color="#ffffff">
           Reviews
         </Typography>
@@ -54,6 +49,12 @@ export default function Review() {
               />
             )
           )}
+        <Typography variant="h5" color="#ffffff">
+          Write a Review
+        </Typography>
+        <div css={styles.write}>
+          <CreateReview />
+        </div>
       </section>
     </div>
   );

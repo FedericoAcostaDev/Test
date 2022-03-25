@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import type { ChangeEvent, FormEvent } from "react";
+import React from "react";
+import type { FormEvent } from "react";
 import { Button, Tooltip, TextField, Card, CardContent } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import { styles } from "./WriteReview.style";
 
-type ReviewEditProps = {
+type ReviewProps = {
   formContent: {
     body: string;
     title: string;
@@ -16,7 +16,7 @@ type ReviewEditProps = {
   handleFormRating: (rating: number) => void;
 };
 
-export default function CreateReview(props: ReviewEditProps) {
+export default function CreateReview(props: ReviewProps) {
   const {
     formContent,
     handleDeleteInput,
