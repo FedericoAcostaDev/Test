@@ -1,4 +1,6 @@
-html,
+html {
+  background-image: url("../../public/ticket.jpg");
+}
 body {
   padding: 0;
   margin: 0;

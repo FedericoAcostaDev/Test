@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from "react-router";
 import type { ChangeEvent, FormEvent } from "react";
 import { Button, Tooltip, TextField, Card, CardContent } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
