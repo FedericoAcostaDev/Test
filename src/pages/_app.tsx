@@ -10,6 +10,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import Header from "components/Header";
 import theme from "styles/theme";
 
+
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   const [store, setStore] = useState<EnhancedStore | null>(null);
   React.useEffect(() => {
@@ -25,7 +26,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>{"Coolmovies Frontend"}</title>
+        <title>{"The Films Cave"}</title>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

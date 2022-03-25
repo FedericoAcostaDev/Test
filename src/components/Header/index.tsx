@@ -21,7 +21,7 @@ export default function Header() {
         width="32"
         height="32"
       />
-      <Typography onClick={redirect}>{"The Film Cave"}</Typography>
+      <Typography onClick={redirect}>{"The Films Cave"}</Typography>
     </Paper>
   );
 }
