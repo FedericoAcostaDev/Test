@@ -15,6 +15,7 @@ export default function MovieFilters(props: MovieFiltersProps) {
       <TextField
         label="Search Movie's Title or Director's Name"
         value={value}
+        css={styles.filter}
         sx={{ width: "300px" }}
         onChange={(e) => onChange(e.target.value)}
         InputProps={{
