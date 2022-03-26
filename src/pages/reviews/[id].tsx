@@ -50,6 +50,12 @@ export default function Review() {
             )
           )}
           
+        <Typography variant="h5" color="#ffffff">
+          Write a Review
+        </Typography>
+        <div css={styles.write}>
+          <CreateReview/>
+        </div>
       </section>
     </div>
   );
