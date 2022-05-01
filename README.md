@@ -1,38 +1,32 @@
-## Challenge Cool Movies
-
-
-- Listing of the movie reviews. 
-- Editing the existing movie reviews.
-- Adding additional reviews.
+## Social Media Project
 
 
 
 ## Technologies
-
+- Next.js
 - React.Js
-- Redux
-- Typescript
-- MUI
-- Apollo Client
-- GraphQl
+- Tailwind css
+- Firebase V9
 
-## Color Pallete
-https://coolors.co/palette/003049-d62828-f77f00-fcbf49-eae2b7
+## Figma File
+
+https://www.figma.com/file/ygCDzCqPgI4jLoMFySJdQP/Social-Media-Project?node-id=118%3A7885
 
 ## Run application
 
-you will need back-end running on Docker
+You will need storybook for the develpment
 
-for front-end:
+First, run the development server:
 
-`Yarn add`
+```bash
+npm install
+and
+npx start-storybook -p 6006
+```
 
-`Yarn run dev`
+## .gitIgnore File content
 
-Access [port 3000](http://localhost:3000)
 
-## .env File content
 
-`GRAPHQL_HOST='http://localhost:5001/graphql'`
 
 
